@@ -1,0 +1,77 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Making Requests — Worksheet</title>
+<style>
+  @page { size: A4; margin: 14mm 14mm 22mm 14mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Inter","Segoe UI",sans-serif; color:#1A1A1A; margin:0; font-size:11pt; }
+  .jpfont { font-family:"Noto Sans JP","Yu Gothic UI","Yu Gothic","Meiryo",sans-serif; }
+  ruby rt { font-size:0.5em; font-weight:400; }
+  header { display:flex; justify-content:space-between; align-items:flex-start; border-bottom:3px solid #0F8B8D; padding-bottom:10px; }
+  .logo { font-family:"Noto Sans JP",sans-serif; font-weight:700; font-size:15pt; }
+  .badge { background:#2563EB; color:#fff; font-weight:700; font-size:9pt; padding:4px 10px; border-radius:6px; letter-spacing:.04em; }
+  h1 { font-family:"Noto Sans JP",sans-serif; font-size:20pt; margin:14px 0 2px; }
+  .en { color:#555; font-size:12pt; margin:0; }
+  .cando { color:#0F8B8D; font-size:10pt; margin:4px 0 0; font-weight:600; }
+  h2 { font-size:12pt; color:#0F8B8D; border-bottom:1px solid #E3E3DE; padding-bottom:4px; margin:20px 0 8px; letter-spacing:.02em; }
+  table { width:100%; border-collapse:collapse; }
+  td, th { border:1px solid #D9D9D3; padding:7px 9px; vertical-align:middle; }
+  th { background:#F4F4F2; font-size:9pt; text-transform:uppercase; letter-spacing:.05em; color:#555; text-align:left; }
+  td.n { width:26px; text-align:center; color:#9A9A94; }
+  td.jp { font-family:"Noto Sans JP",sans-serif; font-size:15pt; font-weight:700; width:30%; }
+  td.ro { font-style:italic; color:#0F8B8D; width:18%; }
+  td.memo, td.blank { background:#FCFCFB; }
+  .dl { display:flex; gap:12px; padding:8px 0; border-bottom:1px dashed #E3E3DE; }
+  .spk { flex:0 0 70px; font-weight:700; color:#0F8B8D; font-size:9pt; padding-top:4px; }
+  .djp { font-family:"Noto Sans JP",sans-serif; font-size:15pt; font-weight:700; }
+  .den { color:#555; font-size:10pt; }
+  .hint { color:#9A9A94; font-size:9pt; margin:2px 0 8px; }
+  /* fixed footer -> repeats on every printed page */
+  .pagefoot { position:fixed; left:14mm; right:14mm; bottom:9mm; display:flex; justify-content:space-between;
+    align-items:center; border-top:2px solid #0F8B8D; padding-top:5px; color:#9A9A94; font-size:8.5pt; }
+  .pagefoot .brand { font-family:"Noto Sans JP",sans-serif; font-weight:700; color:#0F8B8D; font-size:10.5pt; }
+  .pagefoot .brand span { color:#9A9A94; font-weight:500; }
+  /* ---- On-screen (mobile-first) view. @page/print rules above keep the PDF A4. ---- */
+  @media screen {
+    html { -webkit-text-size-adjust:100%; }
+    body { max-width:760px; margin:0 auto; padding:22px 16px 48px; font-size:17px; line-height:1.5; overflow-x:hidden; }
+    header { flex-wrap:wrap; gap:8px; } .badge { white-space:nowrap; }
+    h1 { font-size:27px; } .en { font-size:16px; } .cando { font-size:14px; }
+    h2 { font-size:17px; margin:26px 0 10px; }
+    th, td { font-size:15px; padding:9px 11px; }
+    td.jp, .djp { font-size:20px; } .den { font-size:15px; } .spk { font-size:12px; }
+    .hint { font-size:13px; } .logo { font-size:19px; } .badge { font-size:12px; }
+    .pagefoot { position:static; left:auto; right:auto; bottom:auto; margin-top:30px; font-size:13px; }
+  }
+  @media screen and (max-width:680px) {
+    header { flex-direction:column; align-items:flex-start; }
+    table { display:block; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+    .dl { flex-wrap:wrap; } .spk { flex-basis:100%; }
+  }
+</style></head><body>
+<header>
+  <div><span class="logo">仕事日本語</span> · Shigoto Nihongo</div>
+  <span class="badge">JFT-BASIC · A1</span>
+</header>
+<h1 class="jpfont"><ruby>依頼<rt>いらい</rt></ruby> — 〜て ください</h1>
+<p class="en">Making Requests — Lesson 20</p>
+<p class="cando">Can-do: Ask someone to do something politely.</p>
+
+<h2>1 · Vocabulary — 語彙</h2>
+<table>
+  <tr><th>#</th><th>日本語</th><th>Romaji</th><th>English</th><th>メモ / Notes</th></tr>
+  <tr><td class='n'>1</td><td class='jp'>閉める</td><td class='ro'>shimeru</td><td class='en'>to close</td><td class='memo'></td></tr><tr><td class='n'>2</td><td class='jp'>〜てください</td><td class='ro'></td><td class='en'>please do…</td><td class='memo'></td></tr><tr><td class='n'>3</td><td class='jp'>分かりました</td><td class='ro'>wakarimashita</td><td class='en'>understood; got it</td><td class='memo'></td></tr><tr><td class='n'>4</td><td class='jp'>開ける</td><td class='ro'>akeru</td><td class='en'>to open</td><td class='memo'></td></tr><tr><td class='n'>5</td><td class='jp'>〜てくれますか</td><td class='ro'></td><td class='en'>could you…? (softer request)</td><td class='memo'></td></tr><tr><td class='n'>6</td><td class='jp'>いいですよ</td><td class='ro'></td><td class='en'>sure; okay</td><td class='memo'></td></tr><tr><td class='n'>7</td><td class='jp'>助かります</td><td class='ro'>tasukarimasu</td><td class='en'>that helps; you&#x27;re a lifesaver</td><td class='memo'></td></tr>
+</table>
+
+<h2>2 · Dialogue — 会話</h2>
+<div class='dl'><span class='spk'>Hana</span><div><div class='djp'>すみません、ドアを <ruby>閉<rt>し</rt></ruby>めて ください。</div><div class='den'>Excuse me, please close the door.</div></div></div><div class='dl'><span class='spk'>Aya</span><div><div class='djp'>はい、<ruby>分<rt>わ</rt></ruby>かりました。</div><div class='den'>Yes, understood.</div></div></div><div class='dl'><span class='spk'>Hana</span><div><div class='djp'>それから、<ruby>窓<rt>まど</rt></ruby>も <ruby>開<rt>あ</rt></ruby>けて くれますか。</div><div class='den'>And could you open the window too?</div></div></div><div class='dl'><span class='spk'>Aya</span><div><div class='djp'>いいですよ。</div><div class='den'>Sure.</div></div></div><div class='dl'><span class='spk'>Hana</span><div><div class='djp'>ありがとう。<ruby>助<rt>たす</rt></ruby>かります。</div><div class='den'>Thanks. That helps.</div></div></div><div class='dl'><span class='spk'>Aya</span><div><div class='djp'>どういたしまして。</div><div class='den'>You&#x27;re welcome.</div></div></div>
+
+<h2>3 · Practice — れんしゅう</h2>
+<p class="hint">Write the reading (ふりがな) and the English meaning for each word.</p>
+<table>
+  <tr><th>日本語</th><th>Reading (ふりがな)</th><th>English</th></tr>
+  <tr><td class='jp'>閉める</td><td class='blank'></td><td class='blank'></td></tr><tr><td class='jp'>〜てください</td><td class='blank'></td><td class='blank'></td></tr><tr><td class='jp'>分かりました</td><td class='blank'></td><td class='blank'></td></tr><tr><td class='jp'>開ける</td><td class='blank'></td><td class='blank'></td></tr><tr><td class='jp'>〜てくれますか</td><td class='blank'></td><td class='blank'></td></tr><tr><td class='jp'>いいですよ</td><td class='blank'></td><td class='blank'></td></tr><tr><td class='jp'>助かります</td><td class='blank'></td><td class='blank'></td></tr>
+</table>
+
+<div class="pagefoot"><span class="brand">仕事日本語 <span>· Shigoto Nihongo</span></span><span>Free video lessons on YouTube · jft-a2-02</span></div>
+</body></html>
