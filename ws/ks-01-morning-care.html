@@ -6,6 +6,7 @@
   @page { size:A4; margin:14mm 14mm 22mm 14mm; }
   *{box-sizing:border-box}
   body{font-family:"Inter","Segoe UI",sans-serif;color:#1A1A1A;margin:0;font-size:11pt;}
+  .scrnav{display:none}  /* screen-only cross-link bar; never in the printed PDF */
   ruby rt{font-size:.5em;font-weight:400}
   header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid #0F8B8D;padding-bottom:10px}
   .logo{font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:15pt}
@@ -38,6 +39,9 @@
     html{-webkit-text-size-adjust:100%}
     body{max-width:760px;margin:0 auto;padding:22px 16px 48px;font-size:17px;line-height:1.5;overflow-x:hidden}
     header{flex-wrap:wrap;gap:8px} .badge{white-space:nowrap}
+    .scrnav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:-4px 0 20px;flex-wrap:wrap}
+    .scrnav a{font-weight:700;font-size:14px;color:#0F8B8D;border:1.5px solid #E3E3DE;border-radius:9px;padding:9px 14px;min-height:40px;display:inline-flex;align-items:center}
+    .scrnav a.yt{background:#0F8B8D;color:#fff;border-color:#0F8B8D}
     h1{font-size:27px} .en{font-size:16px} .cando{font-size:14px}
     h2{font-size:17px;margin:26px 0 10px}
     th,td{font-size:15px;padding:9px 11px}
@@ -52,6 +56,7 @@
     .dl{flex-wrap:wrap} .spk{flex-basis:100%}
   }
 </style></head><body>
+<nav class='scrnav'><a href='https://shigotonihongo.github.io/downloads/'>← All lessons</a><a class='yt' href='https://www.youtube.com/playlist?list=PLUcEaDWv6QYk' target='_blank' rel='noopener'>▶ Watch on YouTube</a></nav>
 <header>
   <div><span class="logo">仕事日本語</span> · Shigoto Nihongo</div>
   <span class="badge">介護 · CAREGIVER · JLPT N5</span>
