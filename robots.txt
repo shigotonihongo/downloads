@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shigotonihongo.github.io/downloads/sitemap.xml
